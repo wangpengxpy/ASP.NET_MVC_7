@@ -1,0 +1,78 @@
+﻿@model ASP.NET_MVC_7.Models.UserViewModel
+@{
+    ViewBag.Title = InternationalizationResources.Resource.Title;
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>@InternationalizationResources.Resource.Title</h2>
+    </div>
+    <div class="col-md-4">
+        @using (Html.BeginForm("ChangeCulture", "Internationalization"))
+        {
+            <p>
+                @InternationalizationResources.Resource.SelectLanuage : @Html.DropDownList("ddlCulture", new SelectList(new[]
+ {
+ new{value="zh-CN",text= InternationalizationResources.Resource.Chinese},
+ new{value="en-Us",text= InternationalizationResources.Resource.English}
+
+ }, "value", "text", Session["CurrentCulture"]), new { onchange = "this.form.submit();" })
+            </p>
+        }
+    </div>
+</div>
+<br />
+@using (Html.BeginForm("Index", "Internationalization"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FullName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Address, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="@InternationalizationResources.Resource.Save" class=" btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

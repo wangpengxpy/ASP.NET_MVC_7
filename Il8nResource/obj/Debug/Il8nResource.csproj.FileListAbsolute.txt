@@ -1,0 +1,6 @@
+E:\Documents\Visual Studio 2013\Projects\ASP.NET MVC_7\Il8nResource\bin\Debug\Il8nResource.dll
+E:\Documents\Visual Studio 2013\Projects\ASP.NET MVC_7\Il8nResource\bin\Debug\Il8nResource.pdb
+E:\Documents\Visual Studio 2013\Projects\ASP.NET MVC_7\Il8nResource\obj\Debug\Il8nResource.csproj.GenerateResource.Cache
+E:\Documents\Visual Studio 2013\Projects\ASP.NET MVC_7\Il8nResource\obj\Debug\Il8nResource.dll
+E:\Documents\Visual Studio 2013\Projects\ASP.NET MVC_7\Il8nResource\obj\Debug\Il8nResource.pdb
+E:\Documents\Visual Studio 2013\Projects\ASP.NET MVC_7\Il8nResource\obj\Debug\Il8nResource.zh-cn.resources
